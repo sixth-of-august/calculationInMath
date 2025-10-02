@@ -5,7 +5,7 @@
 # include <math.h>
 
 // пользовательский модуль для работы с матрицами
-# include "gausModule.h"
+# include "matrixModule.h"
 
 // основное тело программы
 int main(){
@@ -97,7 +97,7 @@ return 0;
 
 /* действия в консоли -- 
  создаём программу с подключённым модулем
-  gcc gausModule.c  gauss.c -o gaus_task
+  gcc matrixModule.c  gauss.c -o gaus_task
   
   запускаем исполняемый файл
   ./gaus_task  */

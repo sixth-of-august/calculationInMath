@@ -1,3 +1,7 @@
+// включённые модули программы
+# include <stdio.h>
+# include <stdlib.h>
+
 // директива для компилятора, чтобы модули не вставлялись дважды
 #pragma once
 
@@ -41,3 +45,11 @@ void print_matr(double **matr, int rows, int cols);
 * @param rows: количество столбцов
 */
 void matrix_free(double** matrix, int rows);
+
+/**
+* @brief функция записи значений матрицы из файла
+* @param openedFile: файловавая переменная
+* @param fileName: имя файла для открытия
+* @return: матрица со всеми значениями
+*/
+double** matrixReadFile(char fileName[], int rows, int cols);

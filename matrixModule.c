@@ -3,7 +3,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-# include "gausModule.h"
+# include "matrixModule.h"
 
 /**
 * @brief функция инициализации матрицы
@@ -82,7 +82,7 @@ double** row_change(double** matrix, int  rows_1, int rows_2, int coll_count){
 void print_matr(double **matr, int rows, int cols){
    for (int i = 0; i < rows; i++){
     for(int j = 0; j < cols; j++){
-    printf("%.2f ", matr[i][j]);
+    printf("%6.2lf ", matr[i][j]);
         }
         // переход но новую строку после вывода
         printf("\n");
@@ -105,4 +105,36 @@ void matrix_free(double** matrix, int rows){
 
     // цикл очистки памяти от строки
     free(matrix);
+}
+
+/**
+* @brief функция записи значений матрицы из файла
+* @param openedFile: файловавая переменная
+* @param fileName: имя файла для открытия
+* @return: матрица со всеми значениями
+*/
+double** matrixReadFile(char fileName[], int rows, int cols){
+
+// задаём временyю матрицу для записи значений
+double **matrix;
+FILE *openedFile;
+
+// открываем файл для чтения
+openedFile = fopen(fileName, "r");
+
+// инициализируем матрицу
+matrix = init_matr(rows, cols);
+
+// проходимся циклом
+for(int i = 0; i < rows; i++){
+    for(int j = 0; j < cols; j++){ // сканируем значение в матрицу
+         fscanf(openedFile, "%lf", &matrix[i][j]); 
+    }
+}
+
+// завершаем работу с файлом
+fclose(openedFile); 
+
+// возвращаем матрицу
+return matrix;
 }
