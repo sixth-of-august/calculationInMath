@@ -13,18 +13,15 @@ double **matrix; // переменная для главной матрицы
 double **lMatrix, **uMatrix, *xArray, *yArray;
 int N = 0; // размерность матрицы
 
-// считываем размерность матрицы
-puts("Введите размерность матрицы: ");
-scanf("%d", &N);
+// считываем главную матрицу из файла
+matrix = matrixFromFile("matrix.txt", N, N + 1);
 
-matrix = init_matr(N, N + 1); // выделяем память под главную  матрицу
 lMatrix = init_matr(N, N); // выделяем память под матрицу L
 uMatrix = init_matr(N, N); // выделяем память под матрицу U
 xArray = malloc((N) * sizeof(double)); // выделяем память под вектор X
 yArray = malloc((N) * sizeof(double)); // выделяем память под вектор Y
 
-// считываем главную матрицу из файла
-matrix = matrixReadFile("matrix.txt", N, N + 1);
+
 // заполняем единицами диагональ матрицы uMatrix
 for(int i = 0; i < N; i++){
     uMatrix[i][i] = 1;
