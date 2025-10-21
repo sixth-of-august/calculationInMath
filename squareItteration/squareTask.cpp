@@ -102,4 +102,12 @@ for(size_t k = 1; k < N; k++){
     // выводим на экран вектор yArray
     arrayPrint(xArray); cout << endl;   
 
+    /* действия в консоле 
+    сохдаём исполняемый  файл
+    g++ squareTask.cpp matrixModule.cpp -o program -std=c++20
+    
+    запускаем файл для работы
+    ./program
+    */
+
 }
