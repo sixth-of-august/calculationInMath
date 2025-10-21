@@ -3,6 +3,7 @@
 #include <fstream> // библиотека для хранения потока файлов
 #include <cmath> // библиотека математических формул 
 #include <format> // библиотека для работы с форматом вывода  
+#include <iomanip> // библиотека форматированного вывода 
 #include "matrixModule.hpp" // заголовочный файл
 
 using namespace std;
@@ -41,7 +42,7 @@ void matrixFile(vector<vector<double>> &matrix, char fileName[]){
 void matrixPrint(const vector<vector<double>> matrix){
       for(size_t i = 0; i < matrix.size(); i++){
         for(size_t j = 0; j < matrix[i].size(); j++){
-        cout << format("{:.3}", matrix[i][j]) << "\t"; // выводим пробел между элементами матрицы
+        cout << setw(6) << matrix[i][j]; // выводим пробел между элементами матрицы
     } cout << endl; }
 }
 
@@ -50,7 +51,7 @@ void matrixPrint(const vector<vector<double>> matrix){
  */
 void arrayPrint(const vector<double> array){
     for(size_t i = 0; i < array.size(); i++){
-    cout << format("{:.3}", array[i]) << "\t"; } 
+    cout << format("{:.9}", array[i]) << "\t"; } 
     cout << endl;}
 
 /** @brief процедура выделения памяти под матрицу
