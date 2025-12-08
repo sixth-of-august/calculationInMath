@@ -11,10 +11,10 @@ int main(){
 double **matrix; // переменная для главной матрицы
 // переменные для LU-матриц и XY - векторов
 double **lMatrix, **uMatrix, *xArray, *yArray;
-int N = 0; // размерность матрицы
+int N = 6; // размерность матрицы
 
 // считываем главную матрицу из файла
-matrix = matrixFromFile("matrix.txt", N, N + 1);
+matrix = matrixReadFile("matrix.txt", N, N + 1);
 
 lMatrix = init_matr(N, N); // выделяем память под матрицу L
 uMatrix = init_matr(N, N); // выделяем память под матрицу U
