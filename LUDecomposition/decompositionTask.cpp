@@ -123,3 +123,6 @@ int main(){
     matrixPrint(AInv);   
 
 }
+
+// g++ decompositionTask.cpp matrixModule.cpp -o task.exe --std=c++20
+// ./task

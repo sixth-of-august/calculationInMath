@@ -56,3 +56,6 @@ int main(){
 
     return 0;
 }
+
+// g++ stageMethodTask.cpp matrixModule.cpp -o newTask.exe --std=c++20
+// ./newTask
