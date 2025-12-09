@@ -111,6 +111,7 @@ double tangents(vector<double> const &variable, double a, double b, double eps){
     return dNew;
 }
 
+
 /**
  * @brief комбинированный метод для вычислений  
  * @param variable вектор коэффициентов

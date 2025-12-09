@@ -17,6 +17,7 @@ int main(){
     cin >> degree; degree++;
     variable.resize(degree);
 
+  // промежуток для поиска является примером, предварительно следует сделает исследование
     // записываем свободные коэффициенты
     for(int i = degree - 1; i > 0; i--){
         cout << format("Введите коэфициент для степени x{}:\n", i);
@@ -25,7 +26,9 @@ int main(){
     cout << format("Введите свободный от x коэффициент:\n" );
     cin >> variable[0];
 
-    cout << format("Метод хорд на интервале [-1; 1] с точностью 0.000001: {}\n", chords(variable, -1, 1, eps));
+    printEqualation(variable);
+
+    cout << format("\nМетод хорд на интервале [-1; 1] с точностью 0.000001: {}\n", chords(variable, -1, 1, eps));
     cout << format("Метод касательных на интервале [-1; 1] с точностью 0.000001: {}\n", tangents(variable, -1, 1, eps));
     cout << format("Комбинированный метод на интервале [-1; 1] с точностью 0.000001: {}\n", combined(variable, -1, 1, eps));
     return 0;

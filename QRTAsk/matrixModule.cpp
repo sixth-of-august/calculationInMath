@@ -71,7 +71,7 @@ void matrixPrint(const vector<vector<double>> matrix){
  */
 void arrayPrint(const vector<double> array){
     for(size_t i = 0; i < array.size(); i++){
-    cout << format("{:.3}", array[i]) << "\t"; } 
+    cout << format("{:.10f}", array[i]) << "\t"; } 
     cout << endl;}
 
 /** @brief процедура выделения памяти под матрицу
